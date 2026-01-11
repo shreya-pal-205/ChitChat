@@ -1,5 +1,7 @@
 # 💬 ChitChat — Real-Time Chat Application
 
+**Deploy Link** -> **https://chitchat-jemz.onrender.com** 
+
 ChitChat is a **secure, real-time chat application** that allows users to communicate instantly with text, images, documents, and videos.  
 It is built with a **modern full-stack architecture**, focusing on **performance, security, and scalability** 🚀
 
@@ -38,13 +40,6 @@ Each user has the following information stored securely:
 - **Email and Mobile Number must be unique**
 - No two users can register using the same email or mobile number
 - Prevents duplicate accounts and ensures data integrity
-
-### 🔗 Social Login (Optional / Extendable)
-
-- Supports future integration of:
-  - **Google Login**
-  - **Facebook Login**
-  - **LinkedIn Login**
 
 ---
 
@@ -92,14 +87,14 @@ Admins or authorized users can:
 
 ### 🌐 Frontend
 - **React.js**
-- **HTML5**
-- **CSS3**
-- **JavaScript**
+- **Tailwind CSS**
+- **Shadcn**
 
 ### 🧠 Backend
 - **Node.js**
 - **Express.js**
 - **Socket.io**
+- **Postman**
 
 ### 🗄️ Database
 - **MongoDB**
