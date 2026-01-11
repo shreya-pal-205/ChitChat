@@ -31,7 +31,7 @@ exports.sendFileMessage = async (req, res) => {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
-    // 🔥 Cloudinary gives this URL
+    //  Cloudinary gives this URL
     const fileUrl = req.file.path;
 
     const message = await Message.create({

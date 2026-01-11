@@ -11,13 +11,16 @@ exports.initSocket = (server) => {
   io.on("connection", (socket) => {
     console.log("New client connected:", socket.id);
 
-    // 🔹 USER ONLINE
+    // USER ONLINE
     socket.on("user-online", (userId) => {
       onlineUsers[userId] = socket.id;
       console.log("Online users:", onlineUsers);
     });
 
-    // 🔹 SEND TEXT MESSAGE
+
+
+
+    // SEND TEXT MESSAGE
     socket.on("send-message", async (data) => {
       try {
         const message = await Message.create({
@@ -35,7 +38,11 @@ exports.initSocket = (server) => {
       }
     });
 
-    // 🔹 SEND FILE / VIDEO MESSAGE
+
+
+
+
+    // SEND FILE / VIDEO MESSAGE
     socket.on("send-file", (message) => {
       const receiverSocket = onlineUsers[message.receiver];
       if (receiverSocket) {
@@ -43,7 +50,11 @@ exports.initSocket = (server) => {
       }
     });
 
-    // 🔹 TYPING INDICATOR (START)
+
+
+
+
+    //TYPING INDICATOR (START)
     socket.on("typing", ({ sender, receiver }) => {
       const receiverSocket = onlineUsers[receiver];
       if (receiverSocket) {
@@ -53,7 +64,11 @@ exports.initSocket = (server) => {
       }
     });
 
-    // 🔹 TYPING INDICATOR (STOP)
+
+
+
+
+    // TYPING INDICATOR (STOP)
     socket.on("stop-typing", ({ sender, receiver }) => {
       const receiverSocket = onlineUsers[receiver];
       if (receiverSocket) {
@@ -63,7 +78,11 @@ exports.initSocket = (server) => {
       }
     });
 
-    // 🔹 DISCONNECT
+
+
+
+
+    //DISCONNECT
     socket.on("disconnect", () => {
       for (let userId in onlineUsers) {
         if (onlineUsers[userId] === socket.id) {

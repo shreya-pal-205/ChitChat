@@ -9,7 +9,7 @@ const {
   getAllUsers
 } = require("../controllers/userController");
 
-// 👤 Own profile routes
+//Own profile routes
 router.get("/", auth, getAllUsers);
 router.get("/me", auth, getMyProfile);
 router.put("/me", auth, updateMyProfile);

@@ -12,7 +12,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: "chat_app_media",
-    resource_type: "auto", // 🔥 image + video
+    resource_type: "auto", // image + video
     allowed_formats: ["jpg", "jpeg", "png", "gif", "webp", "mp4", "webm", "mp3", "pdf", "txt", "docx"],
   },
 });

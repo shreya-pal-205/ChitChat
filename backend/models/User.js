@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema(
     },
     provider: {
       type: String,
-      default: "local" // google, facebook, linkedin
+      default: "local" 
     }
   },
   { timestamps: true }

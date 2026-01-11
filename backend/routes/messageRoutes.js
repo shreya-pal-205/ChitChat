@@ -8,7 +8,7 @@ const {
 
 router.get("/:userId1/:userId2", getMessages);
 
-// 🔥 Cloudinary upload
+//Cloudinary upload
 router.post("/upload", upload.single("file"), sendFileMessage);
 
 module.exports = router;

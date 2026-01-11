@@ -6,7 +6,7 @@ const User = require("../models/User");
 
 
 
-
+// GET ALL USERS
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find().select("-password");
@@ -15,10 +15,11 @@ exports.getAllUsers = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-/**
- * 👤 VIEW OWN PROFILE
- * GET /api/users/me
- */
+
+
+
+
+  // VIEW OWN PROFILE
 exports.getMyProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -33,10 +34,11 @@ exports.getMyProfile = async (req, res) => {
   }
 };
 
-/**
- * ✏️ EDIT OWN PROFILE
- * PUT /api/users/me
- */
+
+
+
+
+//  EDIT OWN PROFILE
 exports.updateMyProfile = async (req, res) => {
   try {
     const { name, email, mobile } = req.body;
@@ -56,10 +58,12 @@ exports.updateMyProfile = async (req, res) => {
   }
 };
 
-/**
- * ❌ DELETE OWN PROFILE
- * DELETE /api/users/me
- */
+
+
+
+
+
+//  DELETE OWN PROFILE
 exports.deleteMyProfile = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.user.id);
