@@ -13,7 +13,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!user) return;
 
-    const newSocket = io("http://localhost:5000", {
+    const newSocket = io("https://chitchat-backend-9ns3.onrender.com", {
       transports: ["websocket"],
     });
 
